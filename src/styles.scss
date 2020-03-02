@@ -4,3 +4,20 @@ html, body, p{
     color: $main-text-color;
 }
 
+@import 'variables';
+
+html, body, p {
+  color: $main-text-color;
+}
+
+.apartment {
+  color: #a72da3;
+}
+
+.condo{
+  color: #d68000;
+}
+
+.house{
+  color: #bf1818;
+}
