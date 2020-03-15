@@ -14,13 +14,23 @@
     </ul>
     <span class="navbar-text">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"> Login<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"> Register</a>
-        </li>
+     <ng-container  *ngIf="!authService.isAuthenticated()">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="login"> Login<span class="sr-only">(current)</span></a>
+      </li>
+      <li  class="nav-item">
+        <a class="nav-link" routerLink="register"> Register</a>
+      </li>
+     </ng-container>
       
+     <ng-container  *ngIf="authService.isAuthenticated()">
+      <li  class="nav-item">
+        <p class="nav-link"> {{ authService.getUsername() }}</p>
+      </li>
+      <li  class="nav-item clickable">
+      <a class="nav-link" (click)="logout()"> Logout</a>
+      </li>
+    </ng-container>
       </ul>
         
     </span>

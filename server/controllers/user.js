@@ -38,13 +38,13 @@ exports.auth = function(req,res){
 
 exports.register = function(req,res){
 
-    const {username, email, password, passwordConfimration} = req.body
+    const {username, email, password, passwordConfirmation} = req.body
    
     if(!password || !email){
        return res.status(422).send({errors: [{title: 'Data missing!', detail: 'Need email and password!'}]});
     }
 
-    if(password !== passwordConfimration){
+    if(password !== passwordConfirmation){
         return res.status(422).send({errors: [{title: 'Invalid password!', detail: 'Password is not the same as confirmation!'}]});
     }
 
