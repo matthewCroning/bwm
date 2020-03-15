@@ -65,8 +65,8 @@ class FakeDb {
     }
 
     async seedDb(){
-        this.cleanDb();
-        this.pushDataToDb();
+        //this.cleanDb();
+        //this.pushDataToDb();
     }
 }
 
